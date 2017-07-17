@@ -1,5 +1,6 @@
 package com.kartik.cloudmessaging;
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -22,6 +23,11 @@ public class FirebaseMessageHandler extends FirebaseMessagingService {
 			Log.d("MessageNotification: ", remoteMessage.getNotification().getBody());
 		}
 
+		showNotification(remoteMessage.getFrom(), remoteMessage.getNotification().getBody());
 	}
 
+	public void showNotification(final String from, final String message){
+		final NotificationBuilder notificationBuilder = new NotificationBuilder(getApplicationContext());
+		notificationBuilder.buildNotification(from, message, new Intent(getApplicationContext(), MainActivity.class));
+	}
 }
