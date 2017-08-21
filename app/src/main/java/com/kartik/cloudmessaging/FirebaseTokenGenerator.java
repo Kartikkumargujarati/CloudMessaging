@@ -14,7 +14,7 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 
 public class FirebaseTokenGenerator extends FirebaseInstanceIdService{
 
-private final String TOKEN = "RegistrationToken";
+public static final String TOKEN = "RegistrationToken";
 	@Override
 	public void onTokenRefresh() {
 		// Get updated InstanceID token.

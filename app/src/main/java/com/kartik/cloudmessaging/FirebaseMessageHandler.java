@@ -23,7 +23,7 @@ public class FirebaseMessageHandler extends FirebaseMessagingService {
 			Log.d("MessageNotification: ", remoteMessage.getNotification().getBody());
 		}
 
-		showNotification(remoteMessage.getFrom(), remoteMessage.getNotification().getBody());
+		showNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
 	}
 
 	public void showNotification(final String from, final String message){
